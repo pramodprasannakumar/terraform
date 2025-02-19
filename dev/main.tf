@@ -1,7 +1,5 @@
 provider "aws" {
   region = "us-east-1"
-  access_key = "AKIAYS2NSBUEVVBTIOSN"
-  secret_key = "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"
 }
 
 resource "aws_instance" "firstweb" {
