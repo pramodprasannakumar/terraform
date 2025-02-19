@@ -1,12 +1,10 @@
-provider "aws" {
-  region = "us-east-1"
-}
+module "instance" {
+  source = "../modules" # Path to your module repository
 
-resource "aws_instance" "firstweb" {
-  ami           = "ami-053a45fff0a704a47"
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = "HelloWorld"
-  }
+  ami_id        = "ami-053a45fff0a704a47"
+  instance_type = "t2.medium"
+  instance_name = "myinstancetrail"
+  bucket_name   = "backupinstacefiles"
+  env           = "dev"
+  username      = "pramod"
 }
