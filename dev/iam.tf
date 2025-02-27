@@ -1,5 +1,5 @@
 module "IAM" {
-  source     = "../module/iam"
+  source     = "/root/terraform/module/iam"
   user_name  = "EKS_user"
   policy_arns = [
     "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
