@@ -1,5 +1,5 @@
 module "jenkins_instance" {
-  source             = "../module/instance"
+  source             = "..../module/instance"
   ami               = "ami-04b4f1a9cf54c11d0"  # Add quotes for string values
   instance_type     = "t2.micro"
   key_name         = "t"
