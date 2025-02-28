@@ -3,7 +3,7 @@ provider "aws" {
   }
 
 module "IAM" {
-  source      = "../module/iam"
+  source      = "/root/terraform/module/iam"
   user_name   = "EKS_user"
   policy_arns = [
     "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
@@ -16,19 +16,19 @@ module "IAM" {
 }
 
 module "jenkins_instance" {
-  source             = "../module/jenkins"
+  source             = "/root/terraform/module/jenkins"
   ami               = "ami-04b4f1a9cf54c11d0"
   instance_type     = "t2.micro"
-  key_name         = "t"
-  security_group_id = "sg-046679e1377fbf5d1"
+  key_name         = "zomatokey"
+  security_group_id = "sg-068a0e728afa2d952"
   instance_name     = "jenkins_server"
 }
 
 module "sonarqube_instance" {
-  source             = "../module/sonarqube"
+  source             = "/root/terraform/module/sonarqube"
   ami               = "ami-04b4f1a9cf54c11d0"
   instance_type     = "t2.medium"
-  key_name         = "t"
-  security_group_id = "sg-046679e1377fbf5d1"
+  key_name         = "zomatokey"
+  security_group_id = "sg-068a0e728afa2d952"
   instance_name     = "sonarqube_server"
 }
